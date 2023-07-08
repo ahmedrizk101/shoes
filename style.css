@@ -1,0 +1,137 @@
+/* Global Rules */
+::selection {
+  color: inherit;
+  background-color: red;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  color: whitesmoke;
+  background: linear-gradient(#111, #222);
+  height: 100vh;
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  z-index: -1;
+  clip-path: circle(40% at right 70%);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+a:hover {
+  color: red;
+}
+ul {
+  list-style: none;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav ul {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+header nav ul li {
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.container {
+  width: 80%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  padding: 60px;
+  overflow: hidden;
+}
+header .logo h1 {
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 800;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+}
+.content .image img {
+  width: 460px;
+}
+.content .text {
+  width: 40%;
+}
+.content .text h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+.content .text p {
+  font-size: 18px;
+  line-height: 10px;
+  letter-spacing: 1px;
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+@media (min-width: 950px) and (max-width: 1150px) {
+  .content .image img {
+    width: 360px;
+  }
+}
+@media (max-width: 950px) {
+  header {
+    flex-direction: column;
+  }
+  .content {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .content .text {
+    width: 100%;
+  }
+  .content .image img {
+    width: 260px;
+  }
+  body::after {
+    clip-path: circle(50% at bottom);
+  }
+}
+@media (max-width: 378px) {
+  .content .text h2 {
+    font-size: 18px;
+  }
+  .content .text p {
+    font-size: 9px;
+  }
+  header nav ul li {
+    font-size: 9px;
+    margin: 0 5px;
+  }
+}
